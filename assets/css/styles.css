@@ -517,6 +517,15 @@ nav.primary-nav a.active::after {
   font-size: 0.78rem;
   flex-shrink: 0;
 }
+.role-badge.role-logo {
+  background: #fff;
+  padding: 6px;
+}
+.role-badge.role-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .role-head-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
 .role-company-name { font-weight: 700; font-size: 0.98rem; }
 .role-title-line { color: var(--text-muted); font-size: 0.86rem; }
