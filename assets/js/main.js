@@ -1,5 +1,56 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Hero name: split into per-letter spans for a staggered rise-in
+const heroName = document.querySelector('.hero h1');
+if (heroName && !reduceMotion) {
+  const text = heroName.textContent;
+  heroName.textContent = '';
+  let i = 0;
+  text.split(' ').forEach((word, wi) => {
+    if (wi > 0) heroName.appendChild(document.createTextNode(' '));
+    const wordSpan = document.createElement('span');
+    wordSpan.style.display = 'inline-block';
+    wordSpan.style.whiteSpace = 'nowrap';
+    word.split('').forEach(letter => {
+      const ch = document.createElement('span');
+      ch.className = 'ch';
+      ch.textContent = letter;
+      ch.style.animationDelay = (i * 38) + 'ms';
+      wordSpan.appendChild(ch);
+      i++;
+    });
+    heroName.appendChild(wordSpan);
+  });
+}
+
+// Header: solid background once scrolled
+const siteHeader = document.querySelector('.site-header');
+function updateHeaderScroll() {
+  siteHeader.classList.toggle('scrolled', window.scrollY > 8);
+}
+updateHeaderScroll();
+window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+
+// Nav: scroll-spy active link
+const navLinks = Array.from(document.querySelectorAll('.primary-nav a[href^="#"]'));
+const spySections = navLinks
+  .map(link => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+if (spySections.length) {
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const link = navLinks.find(l => l.getAttribute('href') === '#' + entry.target.id);
+      if (!link) return;
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  spySections.forEach(sec => spyObserver.observe(sec));
+}
+
 // Mobile nav toggle
 const navToggle = document.getElementById('nav-toggle');
 const primaryNav = document.getElementById('primary-nav');
@@ -34,28 +85,12 @@ document.querySelectorAll('.role-head').forEach(head => {
   });
 });
 
-// Journey: filter tabs
-const filterTabs = document.querySelectorAll('.filter-tab');
-const roles = document.querySelectorAll('.role');
-filterTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    filterTabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const filter = tab.dataset.filter;
-    roles.forEach(role => {
-      const tags = role.dataset.tags || '';
-      const matches = filter === 'all' || tags.split(' ').includes(filter);
-      role.style.display = matches ? '' : 'none';
-    });
-  });
-});
-
 // Journey: show earlier roles
 const showEarlyBtn = document.getElementById('show-early');
 let earlyShown = false;
 showEarlyBtn.addEventListener('click', () => {
   earlyShown = !earlyShown;
-  document.querySelectorAll('.role.hidden-early').forEach(r => {
+  document.querySelectorAll('.tl-row.hidden-early').forEach(r => {
     r.style.display = earlyShown ? '' : 'none';
   });
   showEarlyBtn.textContent = earlyShown ? 'Hide earlier roles ↑' : 'Show earlier roles ↓';
@@ -76,27 +111,43 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
   });
 });
 
-// Contact: form -> mailto
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.getElementById('cf-name').value.trim();
-  const email = document.getElementById('cf-email').value.trim();
-  const subject = document.getElementById('cf-subject').value;
-  const message = document.getElementById('cf-message').value.trim();
-  const body = `From: ${name} (${email})\n\n${message}`;
-  const mailto = `mailto:deeb.andrawis@gmail.com?subject=${encodeURIComponent('Portfolio contact: ' + subject)}&body=${encodeURIComponent(body)}`;
-  window.location.href = mailto;
-});
-
 // Reveal-on-scroll
 const revealEls = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-revealEls.forEach(el => observer.observe(el));
+if (reduceMotion) {
+  revealEls.forEach(el => el.classList.add('in'));
+} else {
+  revealEls.forEach(el => el.classList.add('pre'));
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        entry.target.classList.remove('pre');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+}
+
+// Skills: staggered pop-in for chips once the section is visible
+const skillSection = document.getElementById('skills');
+if (skillSection) {
+  const chips = skillSection.querySelectorAll('.chip');
+  if (reduceMotion) {
+    chips.forEach(chip => chip.classList.add('in'));
+  } else {
+    chips.forEach(chip => chip.classList.add('pre'));
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        chips.forEach((chip, i) => {
+          chip.style.setProperty('--k', (i * 35) + 'ms');
+          chip.classList.add('in');
+          chip.classList.remove('pre');
+        });
+        skillObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -15% 0px' });
+    skillObserver.observe(skillSection);
+  }
+}

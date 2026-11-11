@@ -21,13 +21,17 @@
         <li><a href="#journey">Journey</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#articles">Articles</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="nav-actions">
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-        <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path></svg>
+        <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <g class="sun"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path></g>
+          <g class="moon"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" fill="currentColor" stroke="none"></path></g>
+        </svg>
       </button>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
@@ -39,7 +43,12 @@
 <main>
 
   <!-- HERO -->
-  <section class="hero" id="home">
+  <section class="hero-section" id="home">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+    </div>
     <div class="container hero" style="padding:0;">
       <div>
         <span class="eyebrow">Hi, I'm Deeb. Let's talk automation.</span>
@@ -54,33 +63,73 @@
           <a class="icon-btn" href="https://github.com/deeband" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.73 18.27.5 12 .5z"></path></svg>
           </a>
+          <a class="icon-btn" href="https://www.linkedin.com/in/deeb-andrawis-01194469/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.1 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.83v1.98h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14V23h-4v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V23h-4V8.5z"></path></svg>
+          </a>
+          <a class="icon-btn" href="https://www.facebook.com/deeb.andrawis?ref=tn_tnmn" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"></path></svg>
+          </a>
+          <a class="icon-btn" href="https://twitter.com/deeband" target="_blank" rel="noopener" aria-label="Twitter / X" title="Twitter / X">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.2 8.26L23.3 22H16.9l-5-6.6-5.7 6.6H2.9l7.7-8.84L1.7 2h6.6l4.5 6.03L18.9 2zm-1.1 18h1.7L6.3 3.9H4.5L17.8 20z"></path></svg>
+          </a>
+          <a class="icon-btn" href="https://www.instagram.com/deebandrawis" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+          </a>
           <a class="icon-btn" href="mailto:deeb.andrawis@gmail.com" aria-label="Email" title="Email">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3z"></path><path d="M3 6l9 7 9-7"></path></svg>
           </a>
-          <a class="icon-btn" href="#contact" aria-label="Contact" title="Contact">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H7l-3 3z"></path></svg>
-          </a>
         </div>
-        <a class="btn btn-primary" href="#about">More about me</a>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="#about">More about me</a>
+          <a class="btn btn-ghost" href="assets/cv/Deeb-Andrawis-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
       </div>
       <div>
-        <div class="hero-portrait">DA</div>
+        <div class="portrait-wrap">
+          <svg class="orbit-rings" viewBox="0 0 350 350" aria-hidden="true">
+            <circle cx="175" cy="175" r="174" class="ring"></circle>
+            <circle cx="175" cy="175" r="149" class="ring ring-2"></circle>
+          </svg>
+          <div class="orbit-track outer">
+            <div class="orbit-offset" style="transform:rotate(0deg)">
+              <div class="orbit-spin cw-16"><span class="orbit-dot dot-a"></span></div>
+            </div>
+          </div>
+          <div class="orbit-track outer">
+            <div class="orbit-offset" style="transform:rotate(140deg)">
+              <div class="orbit-spin ccw-24"><span class="orbit-dot dot-b"></span></div>
+            </div>
+          </div>
+          <div class="orbit-track inner">
+            <div class="orbit-offset" style="transform:rotate(250deg)">
+              <div class="orbit-spin cw-34"><span class="orbit-dot dot-a"></span></div>
+            </div>
+          </div>
+          <div class="hero-portrait">
+            <img src="assets/img/profile.jpg" alt="Deeb Andrawis">
+          </div>
+        </div>
       </div>
     </div>
+    <a class="cue" href="#about" aria-label="Scroll down">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>
+    </a>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="container reveal">
-      <span class="eyebrow">A little about me</span>
-      <h2>15+ years of automation engineering</h2>
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">A little about me</span>
+        <h2>15+ years of automation engineering</h2>
+      </div>
       <div class="about-grid">
-        <div class="about-text">
+        <div class="about-text reveal rv-l">
           <p>For over fifteen years I've been building automation infrastructure for teams that can't afford to miss a defect — from ad-tech platforms processing massive traffic, to enterprise data-privacy software, to mission-critical drone detection and mitigation systems.</p>
           <p>I started out writing Selenium and TestNG suites as a QA automation developer, and grew into leading automation teams and owning CI/CD infrastructure end-to-end. Along the way I've built frameworks from scratch in Java, Python and JavaScript, migrated teams onto cleaner architectures like the Page Object Model, and used Elasticsearch and Kibana to turn mountains of system logs into real answers.</p>
           <p>These days I split my time between deep system-and-integration validation, backend and API testing, and designing the automation and CI/CD pipelines that let a team ship a release with confidence instead of crossed fingers.</p>
         </div>
-        <div class="lang-card">
+        <div class="lang-card reveal rv-r">
           <h3>Languages I speak</h3>
           <div class="lang-row"><span>Arabic</span><span class="level">Mother tongue</span></div>
           <div class="lang-row"><span>Hebrew</span><span class="level">High level</span></div>
@@ -92,157 +141,199 @@
 
   <!-- JOURNEY -->
   <section id="journey">
-    <div class="container reveal">
-      <span class="eyebrow">Where I've been</span>
-      <h2>Career journey</h2>
-      <div class="filter-tabs" id="filter-tabs">
-        <button class="filter-tab active" data-filter="all">All</button>
-        <button class="filter-tab" data-filter="automation">Automation</button>
-        <button class="filter-tab" data-filter="leadership">Leadership</button>
-        <button class="filter-tab" data-filter="early">Early Career</button>
+    <div class="container">
+      <div class="reveal">
+        <div class="flow-eyebrow"><span class="flow-dash"></span>Where I've been</div>
+        <h2 class="flow-heading">
+          <span class="flow-step">Automation</span>
+          <svg class="flow-arrow" width="48" height="16" viewBox="0 0 48 16" fill="none" aria-hidden="true"><path d="M0 8h40" stroke="currentColor" stroke-width="2"></path><path d="M34 2l8 6-8 6" stroke="currentColor" stroke-width="2" fill="none"></path></svg>
+          <span class="flow-step flow-accent">AI</span>
+        </h2>
+        <p class="section-sub">Open any role to see what I did there.</p>
       </div>
-      <p class="helper-text">Open any role to see what I did there.</p>
 
-      <div id="role-list">
+      <div class="timeline" id="role-list">
 
-        <div class="role" data-tags="automation leadership">
-          <div class="role-head">
-            <div class="role-head-left">
-              <span class="role-title">Senior Automation Developer</span>
-              <span class="role-company">D-Fend · via Galil Software</span>
-              <div class="role-tags"><span class="tag">Automation</span><span class="tag">Leadership</span></div>
+        <div class="tl-row">
+          <div class="tl-slot tl-left">
+            <div class="role">
+              <div class="role-head">
+                <div class="role-badge">DF</div>
+                <div class="role-head-text">
+                  <span class="role-company-name">D-Fend</span>
+                  <span class="role-title-line">Senior Automation Developer · via Galil Software</span>
+                  <span class="role-dates-line">2023 – 2026</span>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+              </div>
+              <div class="role-body"><div class="role-body-inner">
+                <ul>
+                  <li>Executed full-flow validation for mission-critical drone detection and mitigation systems, covering the entire lifecycle from identification to automated mitigation actions.</li>
+                  <li>Used Elasticsearch and Kibana to analyze high-volume system logs, enabling deep investigation into drone trajectory, identification accuracy, and mitigation success.</li>
+                  <li>Built automation to validate backend services and communication layers between control software and SDR-based hardware modules.</li>
+                  <li>Investigated system-level issues by correlating API behavior with system-wide event logs to keep the software-hardware link reliable.</li>
+                  <li>Validated real-time monitoring dashboards and operational workflows for end-users in field environments.</li>
+                  <li>Led the MSC2 automation project — designed scalable frameworks and CI/CD pipelines that cut manual intervention and accelerated release cycles.</li>
+                </ul>
+              </div></div>
             </div>
-            <span class="role-dates">2023 – 2026</span>
-            <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
           </div>
-          <div class="role-body"><div class="role-body-inner">
-            <ul>
-              <li>Executed full-flow validation for mission-critical drone detection and mitigation systems, covering the entire lifecycle from identification to automated mitigation actions.</li>
-              <li>Used Elasticsearch and Kibana to analyze high-volume system logs, enabling deep investigation into drone trajectory, identification accuracy, and mitigation success.</li>
-              <li>Built automation to validate backend services and communication layers between control software and SDR-based hardware modules.</li>
-              <li>Investigated system-level issues by correlating API behavior with system-wide event logs to keep the software-hardware link reliable.</li>
-              <li>Validated real-time monitoring dashboards and operational workflows for end-users in field environments.</li>
-              <li>Led the MSC2 automation project — designed scalable frameworks and CI/CD pipelines that cut manual intervention and accelerated release cycles.</li>
-            </ul>
-          </div></div>
+          <div class="tl-dot-wrap"><span class="tl-dot filled"></span></div>
+          <div class="tl-slot tl-right"></div>
         </div>
 
-        <div class="role" data-tags="automation leadership">
-          <div class="role-head">
-            <div class="role-head-left">
-              <span class="role-title">Automation Team Lead</span>
-              <span class="role-company">BigID · via Galil Software</span>
-              <div class="role-tags"><span class="tag">Automation</span><span class="tag">Leadership</span></div>
+        <div class="tl-row">
+          <div class="tl-slot tl-left"></div>
+          <div class="tl-dot-wrap"><span class="tl-dot"></span></div>
+          <div class="tl-slot tl-right">
+            <div class="role">
+              <div class="role-head">
+                <div class="role-badge">Big</div>
+                <div class="role-head-text">
+                  <span class="role-company-name">BigID</span>
+                  <span class="role-title-line">Automation Team Lead · via Galil Software</span>
+                  <span class="role-dates-line">2021 – 2023</span>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+              </div>
+              <div class="role-body"><div class="role-body-inner">
+                <ul>
+                  <li>Built end-to-end test infrastructure with Cypress and JavaScript for a team of 15+ QA developers.</li>
+                  <li>Integrated Allure with Cypress to enhance test reporting and visibility.</li>
+                  <li>Migrated the entire test suite onto the Page Object Model design pattern.</li>
+                  <li>Implemented parallel test execution to speed up the pipeline.</li>
+                  <li>Maintained and continuously improved the automation infrastructure.</li>
+                  <li>Owned Jenkins pipelines and Groovy scripts for CI/CD, and set up the test environment with Docker and Kubernetes.</li>
+                </ul>
+              </div></div>
             </div>
-            <span class="role-dates">2021 – 2023</span>
-            <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
           </div>
-          <div class="role-body"><div class="role-body-inner">
-            <ul>
-              <li>Built end-to-end test infrastructure with Cypress and JavaScript for a team of 15+ QA developers.</li>
-              <li>Integrated Allure with Cypress to enhance test reporting and visibility.</li>
-              <li>Migrated the entire test suite onto the Page Object Model design pattern.</li>
-              <li>Implemented parallel test execution to speed up the pipeline.</li>
-              <li>Maintained and continuously improved the automation infrastructure.</li>
-              <li>Owned Jenkins pipelines and Groovy scripts for CI/CD, and set up the test environment with Docker and Kubernetes.</li>
-            </ul>
-          </div></div>
         </div>
 
-        <div class="role" data-tags="automation">
-          <div class="role-head">
-            <div class="role-head-left">
-              <span class="role-title">Senior Automation Developer</span>
-              <span class="role-company">IronSource · via Galil Software</span>
-              <div class="role-tags"><span class="tag">Automation</span></div>
+        <div class="tl-row">
+          <div class="tl-slot tl-left">
+            <div class="role">
+              <div class="role-head">
+                <div class="role-badge">IS</div>
+                <div class="role-head-text">
+                  <span class="role-company-name">IronSource</span>
+                  <span class="role-title-line">Senior Automation Developer · via Galil Software</span>
+                  <span class="role-dates-line">2019 – 2020</span>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+              </div>
+              <div class="role-body"><div class="role-body-inner">
+                <ul>
+                  <li>Developed and implemented automation tests using Java frameworks — Selenium, TestNG and Gradle.</li>
+                  <li>Refactored the full regression and sanity suites, rebuilding the infrastructure to cut test run time.</li>
+                </ul>
+              </div></div>
             </div>
-            <span class="role-dates">2019 – 2020</span>
-            <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
           </div>
-          <div class="role-body"><div class="role-body-inner">
-            <ul>
-              <li>Developed and implemented automation tests using Java frameworks — Selenium, TestNG and Gradle.</li>
-              <li>Refactored the full regression and sanity suites, rebuilding the infrastructure to cut test run time.</li>
-            </ul>
-          </div></div>
+          <div class="tl-dot-wrap"><span class="tl-dot"></span></div>
+          <div class="tl-slot tl-right"></div>
         </div>
 
-        <div class="role" data-tags="automation leadership">
-          <div class="role-head">
-            <div class="role-head-left">
-              <span class="role-title">Senior Automation Developer</span>
-              <span class="role-company">Shield34</span>
-              <div class="role-tags"><span class="tag">Automation</span><span class="tag">Leadership</span></div>
+        <div class="tl-row">
+          <div class="tl-slot tl-left"></div>
+          <div class="tl-dot-wrap"><span class="tl-dot"></span></div>
+          <div class="tl-slot tl-right">
+            <div class="role">
+              <div class="role-head">
+                <div class="role-badge">S34</div>
+                <div class="role-head-text">
+                  <span class="role-company-name">Shield34</span>
+                  <span class="role-title-line">Senior Automation Developer</span>
+                  <span class="role-dates-line">2018 – 2019</span>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+              </div>
+              <div class="role-body"><div class="role-body-inner">
+                <ul>
+                  <li>Led QA automation development and execution at Shield34.</li>
+                  <li>Built a UI automation framework from scratch in Java with Selenium and TestNG, integrated with TeamCity.</li>
+                  <li>Built a second UI automation framework from scratch in Python.</li>
+                  <li>Developed database tests against PostgreSQL.</li>
+                </ul>
+              </div></div>
             </div>
-            <span class="role-dates">2018 – 2019</span>
-            <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
           </div>
-          <div class="role-body"><div class="role-body-inner">
-            <ul>
-              <li>Led QA automation development and execution at Shield34.</li>
-              <li>Built a UI automation framework from scratch in Java with Selenium and TestNG, integrated with TeamCity.</li>
-              <li>Built a second UI automation framework from scratch in Python.</li>
-              <li>Developed database tests against PostgreSQL.</li>
-            </ul>
-          </div></div>
         </div>
 
-        <div class="role" data-tags="automation">
-          <div class="role-head">
-            <div class="role-head-left">
-              <span class="role-title">QA Automation Developer</span>
-              <span class="role-company">Similar Web · via Galil Software</span>
-              <div class="role-tags"><span class="tag">Automation</span></div>
+        <div class="tl-row">
+          <div class="tl-slot tl-left">
+            <div class="role">
+              <div class="role-head">
+                <div class="role-badge">SW</div>
+                <div class="role-head-text">
+                  <span class="role-company-name">Similar Web</span>
+                  <span class="role-title-line">QA Automation Developer · via Galil Software</span>
+                  <span class="role-dates-line">2015 – 2018</span>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+              </div>
+              <div class="role-body"><div class="role-body-inner">
+                <ul>
+                  <li>Developed and implemented automation tests using Java frameworks — Selenium and TestNG.</li>
+                  <li>Worked directly within an Agile R&amp;D team alongside QA, frontend and backend developers under a fast-paced Agile timeline.</li>
+                  <li>Built an object-oriented test architecture and maintained continuous integration using TeamCity.</li>
+                  <li>Designed and implemented video-recording capabilities; developed automated tests for SEO ranking, REST API sanity and full regression.</li>
+                  <li>Built an automation history database with Elasticsearch and visualized it with Kibana.</li>
+                </ul>
+              </div></div>
             </div>
-            <span class="role-dates">2015 – 2018</span>
-            <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
           </div>
-          <div class="role-body"><div class="role-body-inner">
-            <ul>
-              <li>Developed and implemented automation tests using Java frameworks — Selenium and TestNG.</li>
-              <li>Worked directly within an Agile R&amp;D team alongside QA, frontend and backend developers under a fast-paced Agile timeline.</li>
-              <li>Built an object-oriented test architecture and maintained continuous integration using TeamCity.</li>
-              <li>Designed and implemented video-recording capabilities; developed automated tests for SEO ranking, REST API sanity and full regression.</li>
-              <li>Built an automation history database with Elasticsearch and visualized it with Kibana.</li>
-            </ul>
-          </div></div>
+          <div class="tl-dot-wrap"><span class="tl-dot"></span></div>
+          <div class="tl-slot tl-right"></div>
         </div>
 
-        <div class="role hidden-early" data-tags="early">
-          <div class="role-head">
-            <div class="role-head-left">
-              <span class="role-title">Tutor</span>
-              <span class="role-company">University of Haifa</span>
-              <div class="role-tags"><span class="tag">Early Career</span></div>
+        <div class="tl-row hidden-early">
+          <div class="tl-slot tl-left"></div>
+          <div class="tl-dot-wrap"><span class="tl-dot"></span></div>
+          <div class="tl-slot tl-right">
+            <div class="role">
+              <div class="role-head">
+                <div class="role-badge">UH</div>
+                <div class="role-head-text">
+                  <span class="role-company-name">University of Haifa</span>
+                  <span class="role-title-line">Tutor</span>
+                  <span class="role-dates-line">2011 – 2012</span>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+              </div>
+              <div class="role-body"><div class="role-body-inner">
+                <ul>
+                  <li>Taught mathematics and computer science to pupils and students.</li>
+                  <li>Tutored calculus, introduction to computer science, and discrete mathematics.</li>
+                  <li>Provided private mentoring and academic support to students.</li>
+                </ul>
+              </div></div>
             </div>
-            <span class="role-dates">2011 – 2012</span>
-            <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
           </div>
-          <div class="role-body"><div class="role-body-inner">
-            <ul>
-              <li>Taught mathematics and computer science to pupils and students.</li>
-              <li>Tutored calculus, introduction to computer science, and discrete mathematics.</li>
-              <li>Provided private mentoring and academic support to students.</li>
-            </ul>
-          </div></div>
         </div>
 
-        <div class="role hidden-early" data-tags="early">
-          <div class="role-head">
-            <div class="role-head-left">
-              <span class="role-title">Computer Technician</span>
-              <span class="role-company">S.S School</span>
-              <div class="role-tags"><span class="tag">Early Career</span></div>
+        <div class="tl-row hidden-early">
+          <div class="tl-slot tl-left">
+            <div class="role">
+              <div class="role-head">
+                <div class="role-badge">SS</div>
+                <div class="role-head-text">
+                  <span class="role-company-name">S.S School</span>
+                  <span class="role-title-line">Computer Technician</span>
+                  <span class="role-dates-line">2008 – 2009</span>
+                </div>
+                <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+              </div>
+              <div class="role-body"><div class="role-body-inner">
+                <ul>
+                  <li>Provided technical support and helped the teaching team with computerized issues.</li>
+                  <li>Taught an "Intro to OOP" class for high school students alongside an experienced teacher.</li>
+                </ul>
+              </div></div>
             </div>
-            <span class="role-dates">2008 – 2009</span>
-            <svg class="role-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
           </div>
-          <div class="role-body"><div class="role-body-inner">
-            <ul>
-              <li>Provided technical support and helped the teaching team with computerized issues.</li>
-              <li>Taught an "Intro to OOP" class for high school students alongside an experienced teacher.</li>
-            </ul>
-          </div></div>
+          <div class="tl-dot-wrap"><span class="tl-dot"></span></div>
+          <div class="tl-slot tl-right"></div>
         </div>
 
       </div>
@@ -250,6 +341,7 @@
       <div class="show-more-row">
         <button class="link-btn" id="show-early">Show earlier roles ↓</button>
       </div>
+      <p class="tl-cv-note">The full history is in the <a href="assets/cv/Deeb-Andrawis-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>.</p>
     </div>
   </section>
 
@@ -344,6 +436,35 @@
       <p class="section-sub">A mix of mission-critical validation work and infrastructure I've designed and owned.</p>
 
       <div class="project-grid">
+        <div class="project-card featured">
+          <span class="tag tag-live">Personal project · Live</span>
+          <h3>ClearMD — Doctor Discovery &amp; Reputation Platform</h3>
+          <p class="project-role">Full-stack developer / sole engineer · ~8 months · 970+ commits</p>
+          <p>A full-stack doctor-discovery and review platform for the Israeli market. Patients search by specialty, city, insurance and treatment, read verified reviews, ask doctors questions and request appointments — with no account required. Doctors get a subscription portal to manage their profile, respond to reviews, track analytics and receive leads via WhatsApp/email. I built the entire product solo: product decisions, database schema, backend APIs, frontend, SEO architecture, billing integration and infrastructure.</p>
+          <div class="chip-row tech-chip-row">
+            <span class="chip" data-tier="now">Next.js 16</span>
+            <span class="chip" data-tier="now">React 19</span>
+            <span class="chip" data-tier="now">TypeScript</span>
+            <span class="chip" data-tier="now">Tailwind CSS v4</span>
+            <span class="chip" data-tier="now">Supabase / Postgres</span>
+            <span class="chip" data-tier="now">pgvector</span>
+            <span class="chip" data-tier="now">Google Gemini</span>
+            <span class="chip" data-tier="now">PayPal Subscriptions</span>
+            <span class="chip" data-tier="now">WhatsApp Cloud API</span>
+            <span class="chip" data-tier="now">Playwright</span>
+            <span class="chip" data-tier="now">Vercel</span>
+            <span class="chip" data-tier="now">GitHub Actions</span>
+          </div>
+          <ul>
+            <li>Webhook-driven billing state machine — doctor accounts only provision after PayPal confirms an active subscription, with idempotent handling for redelivered webhooks</li>
+            <li>Multilingual AI semantic ("symptom") search using Gemini embeddings and pgvector cosine similarity, with a hard geographic post-filter</li>
+            <li>Content-translation pipeline for user-generated text (bios, reviews, Q&amp;A) across Hebrew, English, Arabic and Russian</li>
+            <li>Anonymous-first UX — reviews, questions and appointment requests are token/rate-limit-gated instead of auth-gated, with admin moderation as the trust layer</li>
+          </ul>
+          <div class="project-links">
+            <a class="btn btn-primary" href="https://clearmd.co.il" target="_blank" rel="noopener">Visit clearmd.co.il</a>
+          </div>
+        </div>
         <div class="project-card">
           <span class="tag">Internal · Confidential</span>
           <h3>MSC2 Automation Framework</h3>
@@ -376,6 +497,39 @@
     </div>
   </section>
 
+  <!-- ARTICLES -->
+  <section id="articles">
+    <div class="container reveal">
+      <span class="eyebrow">From my desk</span>
+      <h2>What I've written</h2>
+      <p class="section-sub">Notes on test automation, written while leading QA automation at Shield34.</p>
+
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Reduce Selenium Flaky Tests — What You Should Know</h3>
+          <p>Concrete tips for cutting down flaky Selenium tests: explicit waits, a locator priority order, dedicated automation locators, and sizing your environment and thread count to your suite.</p>
+          <div class="project-links">
+            <a class="btn btn-ghost" href="articles/reduce-flaky-selenium-tests.html">Read article</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>How to Reduce Flaky Tests</h3>
+          <p>A deeper playbook on flakiness: independent tests, re-running only failed cases, and a TestNG retry mechanism built on <code>IRetryAnalyzer</code> and <code>IAnnotationTransformer</code>.</p>
+          <div class="project-links">
+            <a class="btn btn-ghost" href="articles/flaky-tests-retry-mechanism.html">Read article</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>How to Minimize Automated Test Maintenance</h3>
+          <p>The structural habits that keep a Selenium suite cheap to maintain: Page Object Model, component wrappers, a locator strategy, and writing generic, reusable test code.</p>
+          <div class="project-links">
+            <a class="btn btn-ghost" href="articles/minimize-test-maintenance.html">Read article</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="container reveal">
@@ -383,49 +537,27 @@
       <h2>Let's connect</h2>
       <p class="section-sub">Always glad to talk automation, testing infrastructure, or a new opportunity. I usually reply within a day.</p>
 
-      <div class="contact-grid">
-        <div>
-          <ul class="contact-info-list">
-            <li>
-              <div><div class="label">Email</div><div class="value" id="email-value">deeb.andrawis@gmail.com</div></div>
-              <button class="copy-btn" data-copy="deeb.andrawis@gmail.com">Copy</button>
-            </li>
-            <li>
-              <div><div class="label">Phone</div><div class="value">052-812-1057</div></div>
-              <button class="copy-btn" data-copy="0528121057">Copy</button>
-            </li>
-            <li>
-              <div><div class="label">GitHub</div><div class="value"><a href="https://github.com/deeband" target="_blank" rel="noopener">github.com/deeband</a></div></div>
-            </li>
-          </ul>
-        </div>
-
-        <form class="contact-form" id="contact-form">
-          <div class="field">
-            <label for="cf-name">Your name</label>
-            <input id="cf-name" name="name" type="text" required>
-          </div>
-          <div class="field">
-            <label for="cf-email">Email</label>
-            <input id="cf-email" name="email" type="email" required>
-          </div>
-          <div class="field">
-            <label for="cf-subject">What is this about</label>
-            <select id="cf-subject" name="subject" required>
-              <option value="" disabled selected>Choose one</option>
-              <option value="A role">A role</option>
-              <option value="Collaboration">Collaboration</option>
-              <option value="Consultation">Consultation</option>
-              <option value="Something else">Something else</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" required></textarea>
-            <small class="hint form-note">This opens your email client with the message pre-filled — nothing is stored or sent from here.</small>
-          </div>
-          <button class="btn btn-primary" type="submit">Send message</button>
-        </form>
+      <div class="contact-solo">
+        <ul class="contact-info-list">
+          <li>
+            <div><div class="label">Email</div><div class="value" id="email-value">deeb.andrawis@gmail.com</div></div>
+            <button class="copy-btn" data-copy="deeb.andrawis@gmail.com">Copy</button>
+          </li>
+          <li>
+            <div><div class="label">Phone</div><div class="value">052-812-1057</div></div>
+            <button class="copy-btn" data-copy="0528121057">Copy</button>
+          </li>
+          <li>
+            <div><div class="label">GitHub</div><div class="value"><a href="https://github.com/deeband" target="_blank" rel="noopener">github.com/deeband</a></div></div>
+          </li>
+          <li>
+            <div><div class="label">LinkedIn</div><div class="value"><a href="https://www.linkedin.com/in/deeb-andrawis-01194469/" target="_blank" rel="noopener">deeb-andrawis</a></div></div>
+          </li>
+          <li>
+            <div><div class="label">CV</div><div class="value"><a href="assets/cv/Deeb-Andrawis-CV.pdf" target="_blank" rel="noopener">Download PDF</a></div></div>
+          </li>
+        </ul>
+        <a class="btn btn-primary" href="mailto:deeb.andrawis@gmail.com">Email me</a>
       </div>
     </div>
   </section>
@@ -437,6 +569,18 @@
     <div class="icon-row">
       <a class="icon-btn" href="https://github.com/deeband" target="_blank" rel="noopener" aria-label="GitHub">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.73 18.27.5 12 .5z"></path></svg>
+      </a>
+      <a class="icon-btn" href="https://www.linkedin.com/in/deeb-andrawis-01194469/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.1 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.83v1.98h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14V23h-4v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V23h-4V8.5z"></path></svg>
+      </a>
+      <a class="icon-btn" href="https://www.facebook.com/deeb.andrawis?ref=tn_tnmn" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"></path></svg>
+      </a>
+      <a class="icon-btn" href="https://twitter.com/deeband" target="_blank" rel="noopener" aria-label="Twitter / X">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.2 8.26L23.3 22H16.9l-5-6.6-5.7 6.6H2.9l7.7-8.84L1.7 2h6.6l4.5 6.03L18.9 2zm-1.1 18h1.7L6.3 3.9H4.5L17.8 20z"></path></svg>
+      </a>
+      <a class="icon-btn" href="https://www.instagram.com/deebandrawis" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
       </a>
       <a class="icon-btn" href="mailto:deeb.andrawis@gmail.com" aria-label="Email">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3z"></path><path d="M3 6l9 7 9-7"></path></svg>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Minimize Automated Test Maintenance — Deeb Andrawis</title>
+<meta name="description" content="How to keep a Selenium automation suite cheap to maintain: Page Object Model, wrappers, locator strategy, and writing generic, reusable code.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header scrolled">
+  <div class="nav-row">
+    <a class="logo" href="../index.html">Deeb Andrawis</a>
+    <nav class="primary-nav" id="primary-nav">
+      <ul>
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#articles">Articles</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <g class="sun"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path></g>
+          <g class="moon"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" fill="currentColor" stroke="none"></path></g>
+        </svg>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <article class="article-page">
+    <a class="back-link" href="../index.html#articles">← Back to articles</a>
+    <h1>How to Avoid / Minimize Automated Test Maintenance</h1>
+    <p class="article-meta">Written at Shield34 · QA Automation</p>
+
+    <div class="article-body">
+      <p>A test suite that's expensive to maintain gets neglected, then ignored, then deleted. These are the structural habits I rely on to keep a Selenium suite cheap to maintain as the product underneath it keeps changing.</p>
+
+      <h2>1. Page Object Model</h2>
+      <ul>
+        <li>POM is easy, reliable, readable and reusable.</li>
+        <li>When the UI changes, you edit one class representing that component — instead of editing the ten tests that use that page.</li>
+        <li>Separate locators, actions on elements, and the test itself.</li>
+        <li>Tests get shorter because they reuse POMs and their methods.</li>
+      </ul>
+
+      <h2>2. Wrappers</h2>
+      <ul>
+        <li>Use a wrapper for every component, so that when more than one element shares a locator, they're less likely to collide.</li>
+        <li>This is easy and reusable with an abstract POM — for example, two popups that share a wrapper but have different child-element locators.</li>
+      </ul>
+
+      <h2>3. Waits</h2>
+      <ul>
+        <li>Use waits wisely — explicit waits beat implicit waits.</li>
+        <li>Avoid <code>Thread.sleep()</code>. It's sometimes "enough," but when the application slows down, a fixed sleep isn't — an explicit wait is far more efficient.</li>
+      </ul>
+
+      <h2>4. Locators</h2>
+      <ul>
+        <li>Avoid depending on information that's likely to change, such as locating elements by visible text.</li>
+        <li>Start with <code>id</code> — short, fast, safe and unique.</li>
+        <li>Then <code>className</code>, <code>name</code>, <code>tagName</code>, <code>linkText</code>.</li>
+        <li>XPath and CSS should be the last options — they're the least reliable.</li>
+      </ul>
+
+      <h2>5. Automation locators</h2>
+      <p>Add automation-only locators that UI developers know not to touch — for example, <code>aut-click-btn</code>. If a UI developer changes a class name, the automation locator stays untouched and the UI tests aren't affected.</p>
+
+      <h2>6. Strings</h2>
+      <ul>
+        <li>Avoid hardcoded strings in automation tests.</li>
+        <li>Where possible, pull strings from the same place UI developers get them, so a copy change elsewhere doesn't silently break a test.</li>
+        <li>Keep strings in variables so an update only has to happen in one place.</li>
+      </ul>
+
+      <h2>7. Make your code generic</h2>
+      <p>Build POMs and tests to be generic and reusable. Reuse common classes and methods, and avoid duplicating code.</p>
+
+      <h2>Communication matters</h2>
+      <p>Finally: when there's a UI change coming, the automation developer should be the first to know, so they can adapt the tests ahead of time. That communication between UI developers and automation developers is what avoids flaky failures and the investigation time that follows them.</p>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Deeb Andrawis</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

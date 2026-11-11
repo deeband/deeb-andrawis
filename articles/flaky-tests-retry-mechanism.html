@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Reduce Flaky Tests — Deeb Andrawis</title>
+<meta name="description" content="A practical playbook for reducing flaky tests: environment tuning, waits, locators, independent tests, and a TestNG retry mechanism.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header scrolled">
+  <div class="nav-row">
+    <a class="logo" href="../index.html">Deeb Andrawis</a>
+    <nav class="primary-nav" id="primary-nav">
+      <ul>
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#articles">Articles</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <g class="sun"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path></g>
+          <g class="moon"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" fill="currentColor" stroke="none"></path></g>
+        </svg>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <article class="article-page">
+    <a class="back-link" href="../index.html#articles">← Back to articles</a>
+    <h1>How to Reduce Flaky Tests</h1>
+    <p class="article-meta">Written at Shield34 · QA Automation</p>
+
+    <div class="article-body">
+      <p>Flaky tests are one of the most expensive problems in test automation — not because any single failure is hard to fix, but because they erode trust in the whole suite. This is the playbook I use to get flakiness down to a manageable level, finishing with a retry mechanism built on TestNG.</p>
+
+      <h2>Environment</h2>
+      <ul>
+        <li>Keep tuning machine resources until you reach the ideal CPU/RAM for running your tests without slowness problems.</li>
+        <li>Machine resources should be editable and sized to the number of tests.</li>
+        <li>Restart the machine when you notice it's affecting your tests.</li>
+      </ul>
+
+      <h2>Waits</h2>
+      <ul>
+        <li>Use waits wisely — explicit waits beat implicit waits.</li>
+        <li>Avoid <code>Thread.sleep()</code>.</li>
+        <li>Avoid <code>driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS)</code>.</li>
+      </ul>
+
+      <h2>Locators</h2>
+      <ul>
+        <li>Avoid depending on information that's likely to change.</li>
+        <li>Start with <code>id</code> — short, fast, safe and unique.</li>
+        <li>Then <code>className</code>.</li>
+        <li>Then <code>name</code>, <code>tagName</code>, <code>linkText</code>.</li>
+        <li>XPath and CSS should be the last options — they're the least reliable.</li>
+      </ul>
+
+      <h2>Automation locators</h2>
+      <p>Add automation-only locators that UI developers know not to touch. If a UI developer changes a class name, the automation locator stays untouched and the UI tests stay unaffected.</p>
+
+      <h2>Strings</h2>
+      <p>Avoid hardcoded strings in automation tests. Where possible, read strings from the same source UI developers use, so a copy change doesn't silently break a test.</p>
+
+      <h2>Independent tests</h2>
+      <p>Tests shouldn't depend on each other. A failure in one test — say, a popup that didn't get closed — shouldn't cascade into failing unrelated tests.</p>
+
+      <h2>Test retry mechanism</h2>
+      <p>Retrying a test only when it fails is one of the most effective flakiness reducers, with a few caveats:</p>
+      <ul>
+        <li>Make sure the retry isn't affected by the state the first failure left behind — for example, close a lingering popup, or redirect to the test's starting URL before retrying.</li>
+        <li>Set the retry count to 1. If a test doesn't pass twice, the odds of it passing a third time are low — more retries just hide a real problem.</li>
+        <li>Track tests that fail on the first attempt but pass on retry, and investigate the root cause instead of letting the retry paper over it.</li>
+      </ul>
+      <p>In TestNG, this means implementing <code>IRetryAnalyzer</code> and <code>IAnnotationTransformer</code>, then wiring the transformer into your suite:</p>
+      <pre><code>&lt;listeners&gt;
+    &lt;listener class-name="com.example.RetryListener" /&gt;
+&lt;/listeners&gt;</code></pre>
+
+      <h2>Second run</h2>
+      <p>If a run ends with 20 failures, generate a new XML containing only the failed classes (or, better, only the failed tests rather than whole classes). That focused rerun of 20 tests will usually show you which failures were genuinely flaky.</p>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Deeb Andrawis</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

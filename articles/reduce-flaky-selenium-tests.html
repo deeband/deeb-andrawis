@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reduce Selenium Flaky Tests — Deeb Andrawis</title>
+<meta name="description" content="Practical tips for reducing flaky Selenium tests: waits, locator strategy, automation locators, strings, and environment tuning.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header scrolled">
+  <div class="nav-row">
+    <a class="logo" href="../index.html">Deeb Andrawis</a>
+    <nav class="primary-nav" id="primary-nav">
+      <ul>
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#articles">Articles</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <g class="sun"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path></g>
+          <g class="moon"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" fill="currentColor" stroke="none"></path></g>
+        </svg>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <article class="article-page">
+    <a class="back-link" href="../index.html#articles">← Back to articles</a>
+    <h1>Reduce Selenium Flaky Tests — What You Should Know</h1>
+    <p class="article-meta">Written at Shield34 · QA Automation</p>
+
+    <div class="article-body">
+      <p>Selenium changed the game for countless software companies and became a critical piece of agile development. But Selenium isn't flawless, and one of its most common hurdles is recurring flaky tests. They're so common that they don't just hurt a company's bottom line — they create "test result blindness" that erodes quality and frustrates testers.</p>
+      <p>Flaky tests slow testers down because they have to constantly distinguish between a real bug and a false positive. Here are the concrete practices I've relied on to cut flakiness down.</p>
+
+      <h2>Waits</h2>
+      <ul>
+        <li>Use waits wisely — explicit waits are far more reliable than implicit waits.</li>
+        <li>Avoid <code>Thread.sleep()</code>.</li>
+        <li>Avoid <code>driver.manage().timeouts().implicitlyWait(X, TimeUnit.SECONDS)</code>.</li>
+      </ul>
+
+      <h2>Locators</h2>
+      <ul>
+        <li>Start with <code>id</code> — short, fast, safe and unique.</li>
+        <li>Then try <code>className</code>.</li>
+        <li>Then <code>name</code>, <code>tagName</code>, <code>linkText</code>, etc.</li>
+        <li>XPath and CSS selectors should be the last resort — they're the least reliable.</li>
+        <li>Avoid locators that are likely to change.</li>
+      </ul>
+
+      <h2>Automation locators</h2>
+      <ul>
+        <li>Add dedicated automation locators so UI developers won't accidentally break them — for example, <code>aut-click-btn</code>.</li>
+        <li>That way, if a UI developer changes a class name, they know to leave the <code>aut-</code> prefixed locator untouched.</li>
+      </ul>
+
+      <h2>Strings</h2>
+      <ul>
+        <li>Avoid hardcoded strings in automation tests.</li>
+        <li>Where possible, pull strings from the same source the UI developers use — for example, from the i18n file — so a copy change doesn't silently break your tests.</li>
+      </ul>
+
+      <h2>Second run</h2>
+      <p>If a run ends with, say, 20 failures, automatically generate a new run containing only those failed tests. That gives you a focused run of 20 tests, which usually surfaces which failures were genuinely flaky.</p>
+
+      <h2>Environment</h2>
+      <ul>
+        <li>Keep tuning machine resources until you find the CPU/RAM sweet spot for running your tests without slowness problems.</li>
+        <li>Restart the machine when you notice it's starting to affect test runs.</li>
+        <li>Size the number of machines to match the number of tests.</li>
+      </ul>
+
+      <h2>Threads</h2>
+      <ul>
+        <li>Keep tuning the number of parallel threads until you find an optimal number — too many threads can itself cause slowness.</li>
+        <li>Make the thread count configurable so it can scale with your test suite.</li>
+      </ul>
+
+      <h2>Summary</h2>
+      <p>Flaky Selenium tests are a real pain, but they're a solvable one — and there's a large community of Selenium engineers sharing what works. The practices above are the ones that made the biggest difference for me day to day.</p>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Deeb Andrawis</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
