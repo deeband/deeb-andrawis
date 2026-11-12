@@ -103,6 +103,10 @@ a:hover { text-decoration: underline; }
 
 section { padding: 96px 0; border-bottom: 1px solid var(--border); }
 section:last-of-type { border-bottom: none; }
+@media (max-width: 760px) {
+  section { padding: 64px 0; }
+  .container { padding: 0 20px; }
+}
 
 .eyebrow {
   display: inline-block;
@@ -247,6 +251,8 @@ nav.primary-nav a.active::before { display: none; }
   cursor: pointer;
   color: var(--text);
 }
+.nav-toggle svg { transition: transform .25s var(--ease); }
+.nav-toggle[aria-expanded="true"] svg { transform: rotate(90deg); }
 
 @media (max-width: 760px) {
   nav.primary-nav { display: none; }

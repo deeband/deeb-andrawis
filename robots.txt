@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://deeband.github.io/deeb-andrawis/sitemap.xml

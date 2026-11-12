@@ -54,8 +54,23 @@ if (spySections.length) {
 // Mobile nav toggle
 const navToggle = document.getElementById('nav-toggle');
 const primaryNav = document.getElementById('primary-nav');
-navToggle.addEventListener('click', () => primaryNav.classList.toggle('open'));
-primaryNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => primaryNav.classList.remove('open')));
+function setNavOpen(open) {
+  primaryNav.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+}
+navToggle.addEventListener('click', () => setNavOpen(!primaryNav.classList.contains('open')));
+primaryNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNavOpen(false)));
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && primaryNav.classList.contains('open')) {
+    setNavOpen(false);
+    navToggle.focus();
+  }
+});
+document.addEventListener('click', (e) => {
+  if (primaryNav.classList.contains('open') && !primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+    setNavOpen(false);
+  }
+});
 
 // Theme toggle (light / dark / system)
 const themeToggle = document.getElementById('theme-toggle');
@@ -79,9 +94,18 @@ themeToggle.addEventListener('click', () => {
 });
 
 // Journey: accordion
+function toggleRole(head) {
+  const role = head.closest('.role');
+  const open = role.classList.toggle('open');
+  head.setAttribute('aria-expanded', String(open));
+}
 document.querySelectorAll('.role-head').forEach(head => {
-  head.addEventListener('click', () => {
-    head.closest('.role').classList.toggle('open');
+  head.addEventListener('click', () => toggleRole(head));
+  head.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleRole(head);
+    }
   });
 });
 
