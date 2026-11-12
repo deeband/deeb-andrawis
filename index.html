@@ -27,7 +27,9 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#articles">Articles</a></li>
+        <li><a href="#talks">Talks</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -225,7 +227,16 @@
         <div class="flow-eyebrow"><span class="flow-dash"></span>Where I've been</div>
         <h2 class="flow-heading">
           <span class="flow-step">Automation</span>
-          <svg class="flow-arrow" width="48" height="16" viewBox="0 0 48 16" fill="none" aria-hidden="true"><path d="M0 8h40" stroke="currentColor" stroke-width="2"></path><path d="M34 2l8 6-8 6" stroke="currentColor" stroke-width="2" fill="none"></path></svg>
+          <svg class="flow-arrow" width="56" height="20" viewBox="0 0 56 20" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="flowArrowGradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.15"></stop>
+                <stop offset="100%" stop-color="var(--tier-mid)" stop-opacity="1"></stop>
+              </linearGradient>
+            </defs>
+            <path class="flow-arrow-line" d="M1 10h38" stroke="url(#flowArrowGradient)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 6"></path>
+            <path class="flow-arrow-head" d="M32 3l10 7-10 7" stroke="var(--tier-mid)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
           <span class="flow-step flow-accent">AI</span>
         </h2>
         <p class="section-sub">Open any role to see what I did there.</p>
@@ -452,6 +463,48 @@
     </div>
   </section>
 
+  <!-- CERTIFICATES -->
+  <section id="certificates">
+    <div class="container reveal">
+      <span class="eyebrow">Certificates</span>
+      <h2>Courses &amp; certifications</h2>
+      <div class="cert-grid">
+        <a class="cert-card" href="assets/img/certificates/management-development-tsofen.jpg" target="_blank" rel="noopener">
+          <img class="cert-thumb" src="assets/img/certificates/management-development-tsofen.jpg" alt="Management Development certificate of completion" loading="lazy">
+          <div class="cert-body">
+            <div class="edu-dates">October 2020</div>
+            <h3>Management Development</h3>
+            <p>Tsofen, AWSc, Lotem &amp; Forsatech — 40-hour course</p>
+          </div>
+        </a>
+        <a class="cert-card" href="assets/img/certificates/neural-interfacing-awsc.jpg" target="_blank" rel="noopener">
+          <img class="cert-thumb" src="assets/img/certificates/neural-interfacing-awsc.jpg" alt="State of the Art in Neural Interfacing certificate" loading="lazy">
+          <div class="cert-body">
+            <div class="edu-dates">September 2019</div>
+            <h3>State of the Art in Neural Interfacing</h3>
+            <p>Arab Women in Science and Engineering (AWSc) &amp; Alpha Omega</p>
+          </div>
+        </a>
+        <a class="cert-card" href="assets/img/certificates/managerial-course-galil.jpg" target="_blank" rel="noopener">
+          <img class="cert-thumb" src="assets/img/certificates/managerial-course-galil.jpg" alt="Managerial Course Class 5 certificate" loading="lazy">
+          <div class="cert-body">
+            <div class="edu-dates">July 2018</div>
+            <h3>Managerial Course — Class 5</h3>
+            <p>Galil Software</p>
+          </div>
+        </a>
+        <a class="cert-card" href="assets/img/certificates/product-management-starvision.jpg" target="_blank" rel="noopener">
+          <img class="cert-thumb" src="assets/img/certificates/product-management-starvision.jpg" alt="Product Management Certificate from StarVision Academy" loading="lazy">
+          <div class="cert-body">
+            <div class="edu-dates">May 2017</div>
+            <h3>Product Management Certificate</h3>
+            <p>StarVision Academy — 32-hour Product Management Basics course</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- SKILLS -->
   <section id="skills">
     <div class="container reveal">
@@ -587,6 +640,32 @@
           <div class="project-links">
             <a class="btn btn-ghost" href="articles/minimize-test-maintenance.html">Read article</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TALKS -->
+  <section id="talks">
+    <div class="container reveal">
+      <span class="eyebrow">On camera</span>
+      <h2>Talks &amp; walkthroughs</h2>
+      <p class="section-sub">A couple of recordings from my time on the automation team at SimilarWeb.</p>
+
+      <div class="project-grid">
+        <div class="project-card video-card">
+          <div class="video-embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/XLmBbMD98Bc" title="Automation - Continuous Integration, taken to the next level" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3>Automation — Continuous Integration, taken to the next level</h3>
+          <p>How we pushed CI beyond green/red checks into a system the whole team trusted to gate releases.</p>
+        </div>
+        <div class="project-card video-card">
+          <div class="video-embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/_SmD9u9bkfQ" title="SimilarWeb Automation Team 2017 Achievements" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3>SimilarWeb Automation Team — 2017 Achievements</h3>
+          <p>A recap of what the automation team shipped and improved over the year.</p>
         </div>
       </div>
     </div>
