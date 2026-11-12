@@ -80,16 +80,12 @@
     <a class="logo" href="#home">Deeb Andrawis</a>
     <nav class="primary-nav" id="primary-nav">
       <ul>
-        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#flagship">ClearMD</a></li>
         <li><a href="#journey">Journey</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#articles">Articles</a></li>
-        <li><a href="#talks">Talks</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -120,7 +116,7 @@
       <div>
         <span class="eyebrow">Hi, I'm Deeb. Let's talk automation.</span>
         <h1>Deeb Andrawis</h1>
-        <p class="role">Senior Automation Developer · Test Automation &amp; CI/CD Infrastructure · Python · Java · Selenium · Cypress</p>
+        <p class="role">Senior Automation Developer · CI/CD &amp; Test Infrastructure</p>
         <p class="pitch">I build automation and CI/CD infrastructure for systems where a missed defect is expensive — from ad-tech platforms to mission-critical hardware.</p>
         <div class="hero-meta">
           <span>Israel</span>
@@ -174,6 +170,10 @@
           </div>
           <div class="hero-portrait">
             <img src="assets/img/profile.jpg" alt="Deeb Andrawis" width="800" height="800" fetchpriority="high">
+          </div>
+          <div class="hero-badge" aria-hidden="true">
+            <span class="hero-badge-num">11+</span>
+            <span class="hero-badge-label">years in automation</span>
           </div>
         </div>
       </div>
@@ -632,6 +632,9 @@
 
       <div class="project-grid">
         <div class="project-card">
+          <div class="project-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2.5"></circle><circle cx="12" cy="12" r="6.5"></circle><circle cx="12" cy="12" r="10.5"></circle></svg>
+          </div>
           <span class="tag">Internal · Confidential</span>
           <h3>MSC2 Automation Framework</h3>
           <p>Led the automation project behind D-Fend's drone detection &amp; mitigation platform — scalable test frameworks and CI/CD pipelines covering system, integration and API-level validation.</p>
@@ -642,6 +645,9 @@
           </ul>
         </div>
         <div class="project-card">
+          <div class="project-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+          </div>
           <span class="tag">Internal · Confidential</span>
           <h3>Cypress E2E Test Infrastructure</h3>
           <p>Built and led the end-to-end test infrastructure for BigID's platform, supporting a team of 15+ QA developers.</p>
@@ -652,6 +658,9 @@
           </ul>
         </div>
         <div class="project-card">
+          <div class="project-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5l-6 7 6 7M16 5l6 7-6 7"></path></svg>
+          </div>
           <span class="tag">Open source</span>
           <h3>This portfolio</h3>
           <p>The site you're looking at right now — built and deployed with GitHub Pages.</p>
@@ -671,7 +680,10 @@
       <p class="section-sub">Notes on test automation, written while leading QA automation at Shield34.</p>
 
       <div class="project-grid">
-        <div class="project-card">
+        <div class="project-card article-card">
+          <div class="article-thumb article-thumb-a" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 7v5l3.5 2"></path></svg>
+          </div>
           <div class="article-card-head">
             <h3>Reduce Selenium Flaky Tests — What You Should Know</h3>
             <span class="read-time-badge">2 min read</span>
@@ -681,7 +693,10 @@
             <a class="btn btn-ghost" href="articles/reduce-flaky-selenium-tests.html">Read article</a>
           </div>
         </div>
-        <div class="project-card">
+        <div class="project-card article-card">
+          <div class="article-thumb article-thumb-b" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 1 3 6.7"></path><path d="M3 21v-5h5"></path></svg>
+          </div>
           <div class="article-card-head">
             <h3>How to Reduce Flaky Tests</h3>
             <span class="read-time-badge">3 min read</span>
@@ -691,7 +706,10 @@
             <a class="btn btn-ghost" href="articles/flaky-tests-retry-mechanism.html">Read article</a>
           </div>
         </div>
-        <div class="project-card">
+        <div class="project-card article-card">
+          <div class="article-thumb article-thumb-c" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 1 5.4-5.4l-2.5 2.5-2-2 2.5-2.5z"></path></svg>
+          </div>
           <div class="article-card-head">
             <h3>How to Minimize Automated Test Maintenance</h3>
             <span class="read-time-badge">2 min read</span>
@@ -710,7 +728,7 @@
     <div class="container reveal">
       <span class="eyebrow">On camera</span>
       <h2>Talks &amp; walkthroughs</h2>
-      <p class="section-sub">A couple of recordings from my time on the automation team at SimilarWeb.</p>
+      <p class="section-sub">Recordings from my work, plus an AI-generated overview of my career path.</p>
 
       <div class="project-grid">
         <div class="project-card video-card">
@@ -726,6 +744,13 @@
           </div>
           <h3>SimilarWeb Automation Team — 2017 Achievements</h3>
           <p>A recap of what the automation team shipped and improved over the year.</p>
+        </div>
+        <div class="project-card video-card">
+          <div class="video-embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/CImdPGbv9OM" title="The Journey of Deeb Andrawis: A Dynamic Career Path" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3>The Journey of Deeb Andrawis: A Dynamic Career Path</h3>
+          <p>An AI-generated (NotebookLM) overview walking through my career path.</p>
         </div>
       </div>
     </div>
