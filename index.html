@@ -7,6 +7,9 @@
 <meta name="description" content="Deeb Andrawis, Senior Automation Developer. 15+ years building test automation and CI/CD infrastructure for mission-critical and enterprise software.">
 <meta name="google-site-verification" content="ogLQyf8IyzFojWYJTsNB23Z0my0O2c6j56DiQi85VzY" />
 <link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -19,6 +22,7 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#flagship">ClearMD</a></li>
         <li><a href="#journey">Journey</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -135,6 +139,80 @@
           <div class="lang-row"><span>Arabic</span><span class="level">Mother tongue</span></div>
           <div class="lang-row"><span>Hebrew</span><span class="level">High level</span></div>
           <div class="lang-row"><span>English</span><span class="level">High level</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLAGSHIP PROJECT -->
+  <section id="flagship" class="flagship-section">
+    <div class="container">
+      <div class="flagship-grid reveal">
+        <div class="flagship-copy">
+          <div class="flagship-brand">
+            <img src="assets/img/logos/clearmd.png" alt="ClearMD logo" class="flagship-logo" loading="lazy">
+            <span class="eyebrow">Flagship project · Live in production</span>
+          </div>
+          <h2>ClearMD — Doctor Discovery &amp; Reputation Platform</h2>
+          <p class="pitch">A full-stack doctor-discovery and review platform for the Israeli market. Patients search by specialty, city, insurance and treatment, read verified reviews, ask doctors questions and request appointments — no account required. Doctors get a subscription portal to manage their profile, respond to reviews, track analytics and receive leads via WhatsApp/email. I built the entire product solo: product decisions, database schema, backend APIs, frontend, SEO architecture, billing integration and infrastructure.</p>
+
+          <div class="flagship-stats">
+            <div class="stat"><span class="stat-num">970+</span><span class="stat-label">commits</span></div>
+            <div class="stat"><span class="stat-num">~8</span><span class="stat-label">months, solo</span></div>
+            <div class="stat"><span class="stat-num">1</span><span class="stat-label">engineer (me)</span></div>
+            <div class="stat"><span class="stat-num">4</span><span class="stat-label">languages supported</span></div>
+          </div>
+
+          <div class="chip-row tech-chip-row">
+            <span class="chip" data-tier="now">Next.js 16</span>
+            <span class="chip" data-tier="now">React 19</span>
+            <span class="chip" data-tier="now">TypeScript</span>
+            <span class="chip" data-tier="now">Tailwind CSS v4</span>
+            <span class="chip" data-tier="now">Supabase / Postgres</span>
+            <span class="chip" data-tier="now">pgvector</span>
+            <span class="chip" data-tier="now">Google Gemini</span>
+            <span class="chip" data-tier="now">PayPal Subscriptions</span>
+            <span class="chip" data-tier="now">WhatsApp Cloud API</span>
+            <span class="chip" data-tier="now">Playwright</span>
+            <span class="chip" data-tier="now">Vercel</span>
+            <span class="chip" data-tier="now">GitHub Actions</span>
+          </div>
+
+          <div class="project-links">
+            <a class="btn btn-primary" href="https://clearmd.co.il" target="_blank" rel="noopener">Visit clearmd.co.il</a>
+            <a class="btn btn-ghost" href="#projects">More projects ↓</a>
+          </div>
+        </div>
+
+        <div class="flagship-highlights">
+          <div class="highlight-card">
+            <span class="highlight-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+            </span>
+            <h3>AI semantic search</h3>
+            <p>Multilingual "symptom" search using Gemini embeddings and pgvector cosine similarity, with a hard geographic post-filter.</p>
+          </div>
+          <div class="highlight-card">
+            <span class="highlight-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path><path d="M6 15h4"></path></svg>
+            </span>
+            <h3>Webhook billing state machine</h3>
+            <p>Doctor accounts only provision after PayPal confirms an active subscription, with idempotent handling for redelivered webhooks.</p>
+          </div>
+          <div class="highlight-card">
+            <span class="highlight-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h11M9 3v2M11 5c-1 4-3.3 6.8-6 8.5M8 9c1.2 2.5 3 4.5 5 6"></path><path d="M14 21l4-9 4 9M15.3 18h5.4"></path></svg>
+            </span>
+            <h3>Content-translation pipeline</h3>
+            <p>User-generated bios, reviews and Q&amp;A translated across Hebrew, English, Arabic and Russian.</p>
+          </div>
+          <div class="highlight-card">
+            <span class="highlight-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 1-4.5 4.5L17.5 20 12 17l-5.5 3 1-6.5L3 9l6-1z"></path></svg>
+            </span>
+            <h3>Anonymous-first UX</h3>
+            <p>Reviews, questions and appointment requests are token/rate-limit-gated instead of auth-gated, with admin moderation as the trust layer.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -353,7 +431,10 @@
       <h2>Background</h2>
       <div class="edu-grid">
         <div class="edu-card">
-          <div class="edu-dates">2011 – 2015</div>
+          <div class="edu-card-head">
+            <img src="assets/img/logos/haifa.png" alt="University of Haifa logo" class="edu-logo" loading="lazy">
+            <div class="edu-dates">2011 – 2015</div>
+          </div>
           <h3>B.Sc. Computer Science</h3>
           <p>University of Haifa</p>
         </div>
@@ -376,7 +457,7 @@
     <div class="container reveal">
       <span class="eyebrow">Skills and expertise</span>
       <h2>What I work with</h2>
-      <p class="section-sub">A stack built up over 15 years — from Java and Selenium to Python, Cypress and Kubernetes. Each skill is tagged by how recently I've used it.</p>
+      <p class="section-sub">A stack built up over 15 years — from Java and Selenium to Python, Cypress and Kubernetes.</p>
 
       <div class="legend">
         <div class="legend-item"><span class="dot now"></span> Now — 2023 to 2026</div>
@@ -434,38 +515,9 @@
     <div class="container reveal">
       <span class="eyebrow">What I've built</span>
       <h2>Selected work</h2>
-      <p class="section-sub">A mix of mission-critical validation work and infrastructure I've designed and owned.</p>
+      <p class="section-sub">More of the mission-critical validation work and infrastructure I've designed and owned. See <a href="#flagship">ClearMD</a> above for my flagship personal project.</p>
 
       <div class="project-grid">
-        <div class="project-card featured">
-          <span class="tag tag-live">Personal project · Live</span>
-          <h3>ClearMD — Doctor Discovery &amp; Reputation Platform</h3>
-          <p class="project-role">Full-stack developer / sole engineer · ~8 months · 970+ commits</p>
-          <p>A full-stack doctor-discovery and review platform for the Israeli market. Patients search by specialty, city, insurance and treatment, read verified reviews, ask doctors questions and request appointments — with no account required. Doctors get a subscription portal to manage their profile, respond to reviews, track analytics and receive leads via WhatsApp/email. I built the entire product solo: product decisions, database schema, backend APIs, frontend, SEO architecture, billing integration and infrastructure.</p>
-          <div class="chip-row tech-chip-row">
-            <span class="chip" data-tier="now">Next.js 16</span>
-            <span class="chip" data-tier="now">React 19</span>
-            <span class="chip" data-tier="now">TypeScript</span>
-            <span class="chip" data-tier="now">Tailwind CSS v4</span>
-            <span class="chip" data-tier="now">Supabase / Postgres</span>
-            <span class="chip" data-tier="now">pgvector</span>
-            <span class="chip" data-tier="now">Google Gemini</span>
-            <span class="chip" data-tier="now">PayPal Subscriptions</span>
-            <span class="chip" data-tier="now">WhatsApp Cloud API</span>
-            <span class="chip" data-tier="now">Playwright</span>
-            <span class="chip" data-tier="now">Vercel</span>
-            <span class="chip" data-tier="now">GitHub Actions</span>
-          </div>
-          <ul>
-            <li>Webhook-driven billing state machine — doctor accounts only provision after PayPal confirms an active subscription, with idempotent handling for redelivered webhooks</li>
-            <li>Multilingual AI semantic ("symptom") search using Gemini embeddings and pgvector cosine similarity, with a hard geographic post-filter</li>
-            <li>Content-translation pipeline for user-generated text (bios, reviews, Q&amp;A) across Hebrew, English, Arabic and Russian</li>
-            <li>Anonymous-first UX — reviews, questions and appointment requests are token/rate-limit-gated instead of auth-gated, with admin moderation as the trust layer</li>
-          </ul>
-          <div class="project-links">
-            <a class="btn btn-primary" href="https://clearmd.co.il" target="_blank" rel="noopener">Visit clearmd.co.il</a>
-          </div>
-        </div>
         <div class="project-card">
           <span class="tag">Internal · Confidential</span>
           <h3>MSC2 Automation Framework</h3>
@@ -507,21 +559,30 @@
 
       <div class="project-grid">
         <div class="project-card">
-          <h3>Reduce Selenium Flaky Tests — What You Should Know</h3>
+          <div class="article-card-head">
+            <h3>Reduce Selenium Flaky Tests — What You Should Know</h3>
+            <span class="read-time-badge">2 min read</span>
+          </div>
           <p>Concrete tips for cutting down flaky Selenium tests: explicit waits, a locator priority order, dedicated automation locators, and sizing your environment and thread count to your suite.</p>
           <div class="project-links">
             <a class="btn btn-ghost" href="articles/reduce-flaky-selenium-tests.html">Read article</a>
           </div>
         </div>
         <div class="project-card">
-          <h3>How to Reduce Flaky Tests</h3>
+          <div class="article-card-head">
+            <h3>How to Reduce Flaky Tests</h3>
+            <span class="read-time-badge">3 min read</span>
+          </div>
           <p>A deeper playbook on flakiness: independent tests, re-running only failed cases, and a TestNG retry mechanism built on <code>IRetryAnalyzer</code> and <code>IAnnotationTransformer</code>.</p>
           <div class="project-links">
             <a class="btn btn-ghost" href="articles/flaky-tests-retry-mechanism.html">Read article</a>
           </div>
         </div>
         <div class="project-card">
-          <h3>How to Minimize Automated Test Maintenance</h3>
+          <div class="article-card-head">
+            <h3>How to Minimize Automated Test Maintenance</h3>
+            <span class="read-time-badge">2 min read</span>
+          </div>
           <p>The structural habits that keep a Selenium suite cheap to maintain: Page Object Model, component wrappers, a locator strategy, and writing generic, reusable test code.</p>
           <div class="project-links">
             <a class="btn btn-ghost" href="articles/minimize-test-maintenance.html">Read article</a>

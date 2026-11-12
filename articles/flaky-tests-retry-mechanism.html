@@ -40,10 +40,18 @@
   <article class="article-page">
     <a class="back-link" href="../index.html#articles">← Back to articles</a>
     <h1>How to Reduce Flaky Tests</h1>
-    <p class="article-meta">Written at Shield34 · QA Automation</p>
+    <p class="article-meta">Written at Shield34 · QA Automation · <span class="read-time">3 min read</span></p>
 
     <div class="article-body">
       <p>Flaky tests are one of the most expensive problems in test automation — not because any single failure is hard to fix, but because they erode trust in the whole suite. This is the playbook I use to get flakiness down to a manageable level, finishing with a retry mechanism built on TestNG.</p>
+
+      <div class="callout">
+        <svg class="callout-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26A7 7 0 0 0 12 2z"/></svg>
+        <div class="callout-body">
+          <strong>Key takeaway</strong>
+          <p>A retry should mask noise, not bugs. Cap retries at 1, reset test state between attempts, and log every test that needed a retry so the real failure doesn't go uninvestigated.</p>
+        </div>
+      </div>
 
       <h2>Environment</h2>
       <ul>
@@ -84,9 +92,35 @@
         <li>Set the retry count to 1. If a test doesn't pass twice, the odds of it passing a third time are low — more retries just hide a real problem.</li>
         <li>Track tests that fail on the first attempt but pass on retry, and investigate the root cause instead of letting the retry paper over it.</li>
       </ul>
-      <p>In TestNG, this means implementing <code>IRetryAnalyzer</code> and <code>IAnnotationTransformer</code>, then wiring the transformer into your suite:</p>
-      <pre><code>&lt;listeners&gt;
-    &lt;listener class-name="com.example.RetryListener" /&gt;
+      <p>In TestNG, this means implementing <code>IRetryAnalyzer</code>, so each failed test gets one retry:</p>
+      <pre><code class="language-java">public class RetryAnalyzer implements IRetryAnalyzer {
+    private int retryCount = 0;
+    private static final int MAX_RETRY_COUNT = 1;
+
+    @Override
+    public boolean retry(ITestResult result) {
+        if (retryCount < MAX_RETRY_COUNT) {
+            retryCount++;
+            // Reset any state the failed attempt left behind
+            // before TestNG runs the test again.
+            return true;
+        }
+        return false;
+    }
+}</code></pre>
+
+      <p>Then an <code>IAnnotationTransformer</code> wires that analyzer onto every <code>@Test</code> automatically, so nobody has to remember to add it method by method:</p>
+      <pre><code class="language-java">public class RetryTransformer implements IAnnotationTransformer {
+    @Override
+    public void transform(ITestAnnotation annotation, Class testClass,
+                           Constructor testConstructor, Method testMethod) {
+        annotation.setRetryAnalyzer(RetryAnalyzer.class);
+    }
+}</code></pre>
+
+      <p>Finally, register the transformer as a listener in your suite XML:</p>
+      <pre><code class="language-markup">&lt;listeners&gt;
+    &lt;listener class-name="com.example.RetryTransformer" /&gt;
 &lt;/listeners&gt;</code></pre>
 
       <h2>Second run</h2>
@@ -102,5 +136,9 @@
 </footer>
 
 <script src="../assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
 </body>
 </html>

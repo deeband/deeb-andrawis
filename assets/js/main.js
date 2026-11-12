@@ -91,7 +91,7 @@ let earlyShown = false;
 showEarlyBtn.addEventListener('click', () => {
   earlyShown = !earlyShown;
   document.querySelectorAll('.tl-row.hidden-early').forEach(r => {
-    r.style.display = earlyShown ? '' : 'none';
+    r.style.display = earlyShown ? 'flex' : 'none';
   });
   showEarlyBtn.textContent = earlyShown ? 'Hide earlier roles ↑' : 'Show earlier roles ↓';
 });

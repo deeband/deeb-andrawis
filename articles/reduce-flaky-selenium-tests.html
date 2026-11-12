@@ -40,11 +40,19 @@
   <article class="article-page">
     <a class="back-link" href="../index.html#articles">← Back to articles</a>
     <h1>Reduce Selenium Flaky Tests — What You Should Know</h1>
-    <p class="article-meta">Written at Shield34 · QA Automation</p>
+    <p class="article-meta">Written at Shield34 · QA Automation · <span class="read-time">2 min read</span></p>
 
     <div class="article-body">
       <p>Selenium changed the game for countless software companies and became a critical piece of agile development. But Selenium isn't flawless, and one of its most common hurdles is recurring flaky tests. They're so common that they don't just hurt a company's bottom line — they create "test result blindness" that erodes quality and frustrates testers.</p>
       <p>Flaky tests slow testers down because they have to constantly distinguish between a real bug and a false positive. Here are the concrete practices I've relied on to cut flakiness down.</p>
+
+      <div class="callout">
+        <svg class="callout-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26A7 7 0 0 0 12 2z"/></svg>
+        <div class="callout-body">
+          <strong>Key takeaway</strong>
+          <p>Most flaky Selenium tests trace back to timing and locators, not bad luck. Fix your wait strategy and locator priority first, and "flakiness" usually drops to a manageable trickle.</p>
+        </div>
+      </div>
 
       <h2>Waits</h2>
       <ul>
