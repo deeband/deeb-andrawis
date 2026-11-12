@@ -526,6 +526,13 @@ nav.primary-nav a.active::before { display: none; }
 .flagship-section {
   background: linear-gradient(180deg, var(--accent-soft) 0%, transparent 60%);
 }
+
+/* Alternating soft tint backgrounds for visual rhythm between sections */
+#certificates,
+#projects,
+#talks {
+  background: linear-gradient(180deg, var(--accent-soft) 0%, transparent 60%);
+}
 .flagship-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
